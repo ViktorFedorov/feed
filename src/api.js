@@ -22,7 +22,7 @@ const getUser = (token, userId) => {
       'Content-Type': 'application/json',
       Authorization: token ? `Bearer ${token}` : ''
     }
-  })
+  }).then(checkResponse)
 }
 
 export { registration, getUser }
