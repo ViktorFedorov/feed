@@ -3,7 +3,7 @@ import { getUser } from '../../api'
 import { CurrentUserContext } from '../../contexts/currentUserContext'
 
 const CurrentUserChecker = ({ children }) => {
-  const [user, setUser] = useContext(CurrentUserContext)
+  const [, setUser] = useContext(CurrentUserContext)
 
   const token = localStorage.getItem('accessToken')
   const userId = localStorage.getItem('userId')
