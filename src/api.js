@@ -20,7 +20,7 @@ const getUser = (token, userId) => {
   return fetch(`${baseUrl}/users/${userId}`, {
     headers: {
       'Content-Type': 'application/json',
-      Authorization: token ? `Bearer ${token}` : ''
+      Authorization: `Bearer ${token}`
     }
   }).then(checkResponse)
 }

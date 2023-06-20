@@ -9,13 +9,17 @@ const CurrentUserChecker = ({ children }) => {
   const userId = localStorage.getItem('userId')
 
   useEffect(() => {
-    getUser(token, userId).then(({ user }) => {
-      setUser({
-        isLoading: false,
-        isLoggedIn: true,
-        currentUser: user
+    if (!token) return
+
+    getUser(token, userId)
+      .then(({ username }) => {
+        setUser({
+          isLoading: false,
+          isLoggedIn: true,
+          currentUser: username
+        })
       })
-    })
+      .catch(console.log)
   }, [])
 
   return children

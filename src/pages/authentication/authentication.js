@@ -18,7 +18,7 @@ const Authentication = () => {
 
   const [user, setUser] = useContext(CurrentUserContext)
 
-  console.log(user.isLoggedIn)
+  console.log(user) ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   const { pathname } = useLocation()
   const isLoginPage = pathname === '/login'
