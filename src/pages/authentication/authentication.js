@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { registration } from '../../api'
 import styles from './authentication.module.css'
 import { Link, useLocation, Navigate } from 'react-router-dom'
-import { CurrentUserContext } from '../../contexts/currentUser'
+import { CurrentUserContext } from '../../contexts/currentUserContext'
 import ErrorMessages from '../../components/error-messages/error-messages'
 
 const Authentication = () => {
@@ -16,9 +16,7 @@ const Authentication = () => {
     password: ''
   })
 
-  const [user, setUser] = useContext(CurrentUserContext)
-
-  console.log(user) ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  const [, setUser] = useContext(CurrentUserContext)
 
   const { pathname } = useLocation()
   const isLoginPage = pathname === '/login'
@@ -36,9 +34,8 @@ const Authentication = () => {
         localStorage.setItem('userId', user.id)
         setSuccessSubmit(true)
         setUser({
-          isLoading: false,
           isLoggedIn: true,
-          currentUser: user
+          username: user.username
         })
         setFormFields({
           username: '',

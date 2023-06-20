@@ -1,7 +1,7 @@
 import React from 'react'
 import Routes from '../../routes'
 import Header from '../header/header'
-import { CurrentUserProvider } from '../../contexts/currentUser'
+import { CurrentUserProvider } from '../../contexts/currentUserContext'
 import CurrentUserChecker from '../current-user-checker/current-user-checker'
 
 function App() {

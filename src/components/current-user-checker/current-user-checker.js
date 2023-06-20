@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { getUser } from '../../api'
-import { CurrentUserContext } from '../../contexts/currentUser'
+import { CurrentUserContext } from '../../contexts/currentUserContext'
 
 const CurrentUserChecker = ({ children }) => {
   const [user, setUser] = useContext(CurrentUserContext)
@@ -14,9 +14,8 @@ const CurrentUserChecker = ({ children }) => {
     getUser(token, userId)
       .then(({ username }) => {
         setUser({
-          isLoading: false,
           isLoggedIn: true,
-          currentUser: username
+          username
         })
       })
       .catch(console.log)

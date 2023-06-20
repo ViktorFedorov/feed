@@ -3,9 +3,8 @@ export const CurrentUserContext = createContext(null)
 
 export const CurrentUserProvider = ({ children }) => {
   const [user, setUser] = useState({
-    isLoading: false,
     isLoggedIn: null,
-    currentUser: null
+    username: null
   })
 
   return (
