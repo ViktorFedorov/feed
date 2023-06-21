@@ -34,7 +34,10 @@ const Header = () => {
           )}
           {isLoggedIn && (
             <li>
-              <NavLink to='/articles/new' className={styles.navlink}>
+              <NavLink
+                to='/articles/new'
+                className={`${styles.navlink} ${styles.newart}`}
+              >
                 New Post
               </NavLink>
             </li>

@@ -28,3 +28,8 @@
 .navlink:hover {
   opacity: 1;
 }
+
+.newart {
+  padding-left: 30px;
+  background: url(../../images/new_art.svg) no-repeat left center;
+}
