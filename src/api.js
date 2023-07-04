@@ -25,4 +25,13 @@ const getUser = (token, userId) => {
   }).then(checkResponse)
 }
 
-export { registration, getUser }
+const getPosts = () => {
+  return fetch(`${baseUrl}/messages`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('accessToken')}`
+    }
+  }).then(checkResponse)
+}
+
+export { registration, getUser, getPosts }
